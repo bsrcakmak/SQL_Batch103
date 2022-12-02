@@ -5,10 +5,10 @@ create dataBase cakmak;
 
 -- DDL - DATA DEFINITION LANG.
 -- CREATE - TABLO OLUSTURMA
-CREATE TABLE ogrenciler2
+CREATE TABLE ogrenciler5
 (
-ogrenci_no char(7),
-isim varchar(20),
+ogrenci_no char(7), --Uzunlugunu bildigimiz Stringler icin CHAR kullanilir
+isim varchar(20), -- Uzunlugunu bilmedigimiz Stringler icin VARCHAR kullanilir
 soyisim varchar(25),	
 not_ort real, --Ondalikli sayilar icin kullanilir(Double gibi)
 kayit_tarih date	
