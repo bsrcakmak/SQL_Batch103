@@ -210,3 +210,8 @@ INSERT INTO ogrenciler3 VALUES(125, 'Kemal Yasa', 'Hasan',85);
 INSERT INTO ogrenciler3 VALUES(126, 'Nesibe Yilmaz', 'Ayse',95);
 INSERT INTO ogrenciler3 VALUES(127, 'Mustafa Bak', 'Can',99);
 INSERT INTO ogrenciler3 VALUES(127, 'Mustafa Bak', 'Ali', 99);
+
+DELETE FROM ogrenciler3 WHERE isim='Nesibe Yilmaz' OR isim='Mustafa Bak';
+
+SELECT * FROM ogrenciler3;
+
