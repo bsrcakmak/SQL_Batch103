@@ -29,6 +29,7 @@ ssn char(9),
 isim varchar(50), 
 adres varchar(50)
 );
+
 INSERT INTO insanlar1 VALUES(123456789, 'Ali Can', 'Istanbul'); 
 INSERT INTO insanlar1 VALUES(234567890, 'Veli Cem', 'Ankara'); 
 INSERT INTO insanlar1 VALUES(345678901, 'Mine Bulut', 'Izmir'); 
@@ -48,7 +49,7 @@ update insanlar
 set name='no_name' where name is null;
 
 
--- 								ORDER BY CLAUSE
+ 			--ORDER BY CLAUSE--
 /*
 	ORDER BY komutu belli bir field’a gore NATURAL ORDER olarak siralama
 	yapmak icin kullanilir
@@ -58,6 +59,7 @@ set name='no_name' where name is null;
 */ 
 
 drop table if exists insanlar
+
 CREATE TABLE insanlar
 (
 ssn char(9),
@@ -65,6 +67,7 @@ isim varchar(50),
 soyisim varchar(50),  
 adres varchar(50)
 );
+
 INSERT INTO insanlar VALUES(123456789, 'Ali','Can', 'Istanbul');
 INSERT INTO insanlar VALUES(234567890, 'Veli','Cem', 'Ankara');  
 INSERT INTO insanlar VALUES(345678901, 'Mine','Bulut', 'Ankara');  
@@ -115,12 +118,14 @@ SELECT isim ||' '|| soyisim AS isim_soyisim FROM insanlar ORDER BY LENGTH (conca
 Group By komutu sonuçları bir veya daha fazla sütuna göre gruplamak için SELECT
 komutuyla birlikte kullanılır.
 */
+
 CREATE TABLE manav
 (
 isim varchar(50),
 Urun_adi varchar(50),
 Urun_miktar int
 );
+
 INSERT INTO manav VALUES( 'Ali', 'Elma', 5);
 INSERT INTO manav VALUES( 'Ayse', 'Armut', 3);
 INSERT INTO manav VALUES( 'Veli', 'Elma', 2);
