@@ -214,6 +214,34 @@ INTERSECT -- iki kumenin kesisimini alir
 select id from personel_bilgi where cocuk_sayisi in(2,3);
 
 
+--Maasi 4800’den az olanlar veya 5000’den cok olanlarinid’lerini listeleyin
+--Personel_bilgi tablosundan 2 veya 3 cocugu olanlarin id leriniyazdirin
+--Iki sorguyu INTERSECT ilebirlestirin
+select id from personel where maas NOT BETWEEN 4800 and 5000
+INTERSECT
+select id from personel_bilgi where cocuk_sayisi in(2,3);
+
+--Honda,Ford ve Tofas’ta calisan ortak isimde personel varsalisteleyin
+select isim from personel where sirket='Honda'
+INTERSECT 
+select isim from personel where sirket='Ford'
+INTERSECT
+select isim from personel where sirket='Tofas'
+
+
+ --- EXCEPTOPERATOR ---
+ /*
+SQL EXCEPT yan tümcesi/operatörü, iki SELECT deyimini birleştirmek için kullanılır ve 
+ilk SELECT deyiminden ikinci SELECT deyimi tarafından döndürülmeyen satırları döndürür. 
+Bu, EXCEPT'in yalnızca ikinci SELECT deyiminde bulunmayan satırları döndürdüğü anlamına gelir.
+UNION işlecinde olduğu gibi, EXCEPT işlecini kullanırken de aynı kurallar geçerlidir. 
+MySQL, EXCEPT operatörünü desteklemiyor.
+*/
+
+-- 5000’den az maas alip Honda’da calismayanlariyazdirin
+select isim,sirket from personel where maas<5000
+EXCEPT
+select isim,sirket from personel where sirket='Honda'
 
 
 
