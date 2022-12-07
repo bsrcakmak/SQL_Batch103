@@ -102,6 +102,7 @@ CONSTRAINT fk FOREIGN KEY(ted_vergino) REFERENCES parent2(vergi_no)
 ON DELETE CASCADE
 --on delete cascade komutu sayesinde parenttaki bir kayit ile iliskili olan tum child kayitlarini silebiliriz
 --on delete cascade komutu yoksa once child silinir sonra parent
+--> yazmasakda tabloyu silerken sonuna CASCADE eklememiz yeterli
 );
 
 INSERT INTO child2 VALUES(101, 1001,'PC', 'Habip Sanli');
@@ -117,7 +118,7 @@ select * from child2;
 --SORU1: parent2 tablosundaki tüm verileri siliniz
 --CHILD TABLODAKI VERIYI SILMEDEN PARENT TABLODAKI VERIYI SILEBILDIK
 
-delete from parent2;
+delete from parent2;  --> child’daki veriler de silinir
 select* from parent2;
 -- ON DELETE CASCADE sayesinde child2 tablosundaki veriyi silmeden 
 --parent 2 tablosndaki  verileri silebildik. Aynı zamanda parent tablo da 
@@ -171,4 +172,5 @@ UPDATE toptancilar SET sirket_ismi='Vivobook' where vergi_no=202;
 --  SORU2: toptancilar tablosundaki tüm sirket isimlerini 'NOKIA' olarak güncelleyeniz.
 update toptancilar set sirket_ismi='NOKIA';
 
-
+DROP TABLE toptancilar
+DROP TABLE malzemeler
